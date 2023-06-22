@@ -26,10 +26,9 @@ app.add_middleware(
 
 @app.get("/")
 async def index():
-    #return {"ping":"pong"}
     return "Hello World!"
 
-@app.get("/api/todo")
+@app.get("/api/todo",response_model=list[Todo])
 async def get_todo():
     response = await fetch_all_todos()
     return response

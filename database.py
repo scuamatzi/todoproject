@@ -12,7 +12,8 @@ async def fetch_one_todo(title):
 
 async def fetch_all_todos():
     todos=[]
-    cursor=collection.find({})
+    #cursor=collection.find({}) #find can be empty or have an empty dict
+    cursor=collection.find()
     async for item in cursor:
         todos.append(Todo(**item))
     return todos
