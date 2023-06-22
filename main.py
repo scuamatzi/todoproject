@@ -1,8 +1,11 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from model import Todo
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse
 
 app=FastAPI()
+templates=Jinja2Templates(directory="templates")
 
 from database import(
     fetch_one_todo,
@@ -29,9 +32,10 @@ async def index():
     return "Hello World!"
 
 @app.get("/api/todo",response_model=list[Todo])
-async def get_todo():
+async def get_todo(request:Request):
     response = await fetch_all_todos()
-    return response
+    #return response
+    return templates.TemplateResponse("inicio.html",{"request":request ,"listado":response})
 
 @app.get("/api/todo/{title}", response_model=Todo)
 async def get_todo_by_id(title):
