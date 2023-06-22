@@ -58,9 +58,10 @@ async def update_todo_item(title:str, desc:str):
         return response
     raise HTTPException(status_code=404,detail=f"There is no TODO item with this title {title}")
 
-@app.delete("/api/todo/{title}")
+@app.get("/api/todo/delete/{title}")
 async def delete_todo(title:str):
     response = await remove_todo(title)
     if response:
-        return "Successfully deleted todo item! "
+        #return "Successfully deleted todo item! "
+        return RedirectResponse("/api/todo", status_code=303)
     raise HTTPException(status_code=404, detail=f"There is no TODO item with this {title}")
