@@ -16,12 +16,12 @@
 
     <!--<form class="row" action="" method="post">-->
     <div class="col col-md-8 offset-md-2" >
-        <form>
+        <form action="/api/todo" method="post">
             <div class="form-group">
-                <input type="text" placeholder="New Task" class="form-control">
+                <input name="title" type="text" placeholder="New Task" class="form-control">
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Description" class="form-control">
+                <input name="description" type="text" placeholder="Description" class="form-control">
             </div>
                 <button type="submit" class="btn btn-primary"> ADD</button>
             
