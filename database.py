@@ -1,7 +1,8 @@
 from model import Todo
 import motor.motor_asyncio
 
-client=motor.motor_asyncio.AsyncIOMotorClient("mongodb://user:password@localhost")
+#client=motor.motor_asyncio.AsyncIOMotorClient("mongodb://user:password@localhost")
+client=motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://escuamatzidb:KSRZDP0q5FphDpDZ@esccdb.mehtqh5.mongodb.net/")
 
 database=client.TodoList
 collection=database.todo
