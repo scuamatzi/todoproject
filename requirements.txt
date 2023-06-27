@@ -3,3 +3,4 @@ uvicorn
 motor
 jinja2
 python-multipart
+mangum

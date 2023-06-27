@@ -3,9 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from model import Todo
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
+from mangum import Mangum
 
 app=FastAPI()
 templates=Jinja2Templates(directory="templates")
+handler=Mangum(app)
 
 from database import(
     fetch_one_todo,
