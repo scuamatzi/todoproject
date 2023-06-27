@@ -163,3 +163,4 @@ password.txt
 dep/
 #project for lambda-aws service
 lambdafastapi.zip
+pass.json

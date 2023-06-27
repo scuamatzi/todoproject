@@ -1,8 +1,17 @@
 from model import Todo
 import motor.motor_asyncio
+import json
+
+file=open("pass.json", mode="r")
+data=json.load(file)
+user=data["user"]
+passwd=data["pass"]
+file.close
 
 #client=motor.motor_asyncio.AsyncIOMotorClient("mongodb://user:password@localhost")
-client=motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://escuamatzidb:KSRZDP0q5FphDpDZ@esccdb.mehtqh5.mongodb.net/")
+#client=motor.motor_asyncio.AsyncIOMotorClient("mongodb+srv://escuamatzidb:KSRZDP0q5FphDpDZ@esccdb.mehtqh5.mongodb.net/")
+client=motor.motor_asyncio.AsyncIOMotorClient(f"mongodb+srv://{user}:{passwd}@esccdb.mehtqh5.mongodb.net/")
+print(f"{user}:{passwd}")
 
 database=client.TodoList
 collection=database.todo
