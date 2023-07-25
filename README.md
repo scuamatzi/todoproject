@@ -1,8 +1,8 @@
-# TODO API with FastAPI
+# Simple TODO project using FastAPI and Jinja2
 
-#### Exercise from freecodecamp at youtube (FARM Stack project)
+#### Based on freecodecamp course at youtube (FARM Stack project)
 
-Simple TODO Project. The backend was created following the tutorial from freecodecamp using FastAPI. After that, I modify it to use mongodb. It can run completely on AWS Lambda for testing.
+The backend was created following the tutorial from freecodecamp using FastAPI. After that, I modify it to use mongodb. It can run completely on AWS Lambda for testing. The frontend was made using Jinja2
 
 https://youtu.be/OzUzrs8uJl8
 
